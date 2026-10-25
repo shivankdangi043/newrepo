@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@theme{--color-lav:#b9a9e0;--color-lav2:#e6e0f7;--color-dusty:#7c9cbf;--color-dusty2:#dce7f2;--color-beige:#f4ecdd;--color-beige2:#e9dcc3;--color-olive:#5b6b3a;--color-olive2:#3f4a28;
+ --font-display:'Fraunces',serif;--font-sans:'Inter',system-ui,sans-serif}
+:root{--bg:#f4ecdd;--card:rgba(255,255,255,.62);--fg:#2a2e20;--mut:#6b705a;--bd:rgba(91,107,58,.18)}
+.dark{--bg:#1c2015;--card:rgba(48,55,36,.62);--fg:#f4ecdd;--mut:#b5b9a2;--bd:rgba(185,169,224,.2)}
+html{scroll-behavior:smooth}body{background:var(--bg);color:var(--fg);font-family:var(--font-sans);transition:background .4s,color .4s}
+.glass{background:var(--card);backdrop-filter:blur(16px);border:1px solid var(--bd);border-radius:1.25rem;box-shadow:0 12px 32px -14px rgba(63,74,40,.3)}
+.blob{position:fixed;border-radius:9999px;filter:blur(90px);opacity:.5;z-index:-1;animation:float 16s ease-in-out infinite}
+@keyframes float{50%{transform:translate(50px,-40px) scale(1.15)}}
+.btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--color-olive);color:#fff;border-radius:.9rem;padding:.65rem 1.1rem;font-weight:500;transition:.25s;cursor:pointer}
+.btn:hover{background:var(--color-olive2);transform:translateY(-2px);box-shadow:0 8px 20px -8px var(--color-olive)}.btn:disabled{opacity:.5;pointer-events:none}
+.btn-soft{background:var(--color-lav2);color:var(--color-olive2)}.btn-soft:hover{background:var(--color-lav);color:var(--color-olive2)}
+.inp{width:100%;background:rgba(255,255,255,.5);color:inherit;border:1px solid var(--bd);border-radius:.9rem;padding:.65rem .9rem;outline:none;transition:.2s}
+.dark .inp{background:rgba(0,0,0,.2)}.inp:focus{border-color:var(--color-lav);box-shadow:0 0 0 4px rgba(185,169,224,.35)}
+.chip{padding:.35rem .8rem;border-radius:9999px;border:1px solid var(--bd);font-size:.85rem;cursor:pointer;transition:.2s}
+.chip.on{background:var(--color-lav);color:var(--color-olive2);border-color:var(--color-lav)}
+.shimmer{background:linear-gradient(90deg,var(--card) 25%,var(--color-lav2) 50%,var(--card) 75%);background-size:200% 100%;animation:sh 1.4s infinite}
+@keyframes sh{to{background-position:-200% 0}}
+.grad-text{background:linear-gradient(120deg,var(--color-olive),var(--color-dusty),var(--color-lav));-webkit-background-clip:text;color:transparent}
+.scan{position:relative;overflow:hidden}.scan::after{content:"";position:absolute;left:0;right:0;height:3px;background:var(--color-lav);box-shadow:0 0 20px var(--color-lav);animation:scan 1.2s linear infinite}
+@keyframes scan{from{top:0}to{top:100%}}
+input[type=range]{accent-color:var(--color-olive);width:100%}
